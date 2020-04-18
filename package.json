@@ -1,0 +1,32 @@
+{
+  "name": "nodeexpressmongorestapi",
+  "version": "1.0.0",
+  "description": "This Project have Rest API's with the help of nodejs, expressjs, mongodb.",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RathodSanjayL/NodeExpressMongoRestAPI.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Expressjs",
+    "MongoDB"
+  ],
+  "author": "Sanjay Rathod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RathodSanjayL/NodeExpressMongoRestAPI/issues"
+  },
+  "homepage": "https://github.com/RathodSanjayL/NodeExpressMongoRestAPI#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
