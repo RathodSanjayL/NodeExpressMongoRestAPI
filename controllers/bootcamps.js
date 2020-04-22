@@ -9,7 +9,7 @@ const asyncHandler = require('../middleware/async');
 //@route    GET /api/v1/bootcamps
 //@access   Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-
+    console.log('calll', res);
     res.status(200).json(res.advancedResults);
 });
 
