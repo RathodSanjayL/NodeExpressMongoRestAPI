@@ -1,42 +1,35 @@
 {
-  "name": "nodeexpressmongorestapi",
+  "name": "devcamper_api",
   "version": "1.0.0",
-  "description": "This Project have Rest API's with the help of nodejs, expressjs, mongodb.",
+  "description": "Devcamper backend API",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "nodemon server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RathodSanjayL/NodeExpressMongoRestAPI.git"
-  },
-  "keywords": [
-    "Node.js",
-    "Expressjs",
-    "MongoDB"
-  ],
-  "author": "Sanjay Rathod",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RathodSanjayL/NodeExpressMongoRestAPI/issues"
-  },
-  "homepage": "https://github.com/RathodSanjayL/NodeExpressMongoRestAPI#readme",
+  "author": "Brad Traversy",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.7-alpha.3",
+    "express-fileupload": "^1.1.6-alpha.5",
+    "express-mongo-sanitize": "^1.3.2",
+    "express-rate-limit": "^5.0.0",
+    "helmet": "^3.21.1",
+    "hpp": "^0.2.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.9",
-    "morgan": "^1.10.0",
-    "node-geocoder": "^3.27.0",
-    "nodemailer": "^6.4.6",
-    "slugify": "^1.4.0"
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1",
+    "node-geocoder": "^3.24.0",
+    "nodemailer": "^6.3.0",
+    "slugify": "^1.3.5",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^1.19.2"
   }
 }
