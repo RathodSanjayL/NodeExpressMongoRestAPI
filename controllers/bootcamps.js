@@ -1,8 +1,15 @@
 const path = require('path');
+const AWS = require('aws-sdk');
+
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const geocoder = require('../utils/geocoder');
 const Bootcamp = require('../models/Bootcamp');
+
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_S3_ACCESSS_KEY,
+  secretAccessKey: process.env.AWS_S3_SECRET_KEY
+});
 
 // @desc      Get all bootcamps
 // @route     GET /api/v1/bootcamps
@@ -184,17 +191,22 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   // Create custom filename
   file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`;
 
-  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
-    if (err) {
-      console.error(err);
+  const params = {
+    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Key: file.name, // File name you want to save as in S3
+    Body: file.data
+  };
+
+  s3.upload(params, async (err, data) => {
+    if(err) {
       return next(new ErrorResponse(`Problem with file upload`, 500));
     }
 
-    await Bootcamp.findByIdAndUpdate(req.params.id, { photo: file.name });
+    await Bootcamp.findByIdAndUpdate(req.params.id, { photo: data.Location });
 
     res.status(200).json({
       success: true,
-      data: file.name
+      data: data.Location
     });
   });
 });
