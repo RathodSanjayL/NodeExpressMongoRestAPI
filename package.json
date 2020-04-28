@@ -1,13 +1,13 @@
 {
-  "name": "devcamper_api",
+  "name": "node-express-mongo-rest-api",
   "version": "1.0.1",
-  "description": "Devcamper backend API",
+  "description": "This repo is for Rest API's demo with node express mongo",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "nodemon server"
   },
-  "author": "Brad Traversy",
+  "author": "Sanjay Rathod",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.663.0",
